@@ -11,6 +11,15 @@
 |
 */
 
+//REFERENSI --> https://www.5balloons.info/user-role-based-authentication-and-access-control-in-laravel/
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin', 'AdminController@index');
+ 
+Route::get('/superadmin', 'SuperAdminController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
